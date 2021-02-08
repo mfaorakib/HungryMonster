@@ -44,8 +44,6 @@ button.addEventListener('click', function () {
 const foodDetails = list => {
 
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${list}`;
-    console.log(url)
-    //console.log(list)
     fetch(url)
         .then(res => res.json())
         .then(data => {
