@@ -49,22 +49,23 @@ const foodDetails = list => {
         .then(res => res.json())
         .then(data => {
             foodIngredients(data.meals[0]);
-           
+
         });
-      
-        remove.style.display="none";
-        popModal.style.display="block";  
+
+    remove.style.display = "none";
+    popModal.style.display = "block";
 }
 
 const foodIngredients = (food) => {
     const ingredients = [];
     for (let i = 1; i <= 10; i++) {
-    if( food[`strIngredient${i}`]){
-        ingredients.push(`${food[`strIngredient${i}`]} - ${food[`strMeasure${i}`]}`);}
-     else{
-         break;
-     }
-     
+        if (food[`strIngredient${i}`]) {
+            ingredients.push(`${food[`strIngredient${i}`]} - ${food[`strMeasure${i}`]}`);
+        }
+        else {
+            break;
+        }
+
     }
     const mealDiv = document.getElementById('Ingredients');
     mealDiv.innerHTML = `
@@ -79,6 +80,6 @@ const foodIngredients = (food) => {
 
 
 
- 
-    
+
+
 
