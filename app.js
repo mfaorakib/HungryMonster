@@ -1,5 +1,4 @@
 const button = document.getElementById("searchButton");
-const foodName = document.getElementById("mealName");
 const remove = document.getElementById("mealsfood");
 const popModal = document.getElementById("modal")
 
@@ -8,7 +7,9 @@ const popModal = document.getElementById("modal")
 // food search
 
 button.addEventListener('click', function () {
-    let link = `https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName.value}`;
+    const foodName = document.getElementById("mealName").value;
+
+    let link = `https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`;
     fetch(link)
         .then(res => res.json())
         .then(data => DisplayFoodName(data))
