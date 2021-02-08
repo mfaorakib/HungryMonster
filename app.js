@@ -50,7 +50,7 @@ const foodDetails = list => {
         .then(res => res.json())
         .then(data => {
             foodIngredients(data.meals[0]);
-            console.log(data.meals[0]);
+           
         });
       
         remove.style.display="none";
