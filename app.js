@@ -8,8 +8,7 @@ const popModal = document.getElementById("modal")
 // food search
 
 button.addEventListener('click', function () {
-    let link = `https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName.value}`
-    // let link = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772=${foodName.value}`
+    let link = `https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName.value}`;
     fetch(link)
         .then(res => res.json())
         .then(data => DisplayFoodName(data))
